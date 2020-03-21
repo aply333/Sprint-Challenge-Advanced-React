@@ -6,4 +6,5 @@ export const PlayerContainer = styled.div`
     position:absolute;
     right: 10px;
     overflow-y: scroll;
+    color:#EA526F;
 `;

@@ -2,6 +2,7 @@ import React from 'react';
 import HeaderBar from './components/HeaderBar';
 import Body from './components/Body';
 import SelectedContainer from './components/selectedPlayers/selectedContainer';
+import Chart from './components/playerChart/chart';
 
  
 
@@ -15,11 +16,12 @@ class App extends React.Component{
     }
   }
 
-  addHandler = addPlayer =>  {
+  addHandler = (addPlayer, addCount) =>  {
     this.setState({
       list:[
         ...this.state.list,{
-          player: addPlayer,
+          name: addPlayer,
+          count: addCount,
           dateAdded: Date.now(),
           id: (Math.random() * Math.random()).toString(9).substr(2, 9)
         }
@@ -37,6 +39,7 @@ class App extends React.Component{
     <div> 
       <HeaderBar/>
       <button onClick={this.consoleTest}>Console Log</button>
+      <Chart chartData={this.state}/>
       <SelectedContainer selected={this.state}/>
       <Body addHandler={this.addHandler}/>
     </div>)

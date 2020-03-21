@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { SelectStyleCard } from  "./selectedStyles";
 // const SelectedCard = props => {
 //     console.log(props.selected)
 //     return(
@@ -10,14 +10,11 @@ import React from 'react';
 // }
 
 class SelectedCard extends React.Component {
-    
-
     render() {
         return(
-            <>
-            
-            <h1>{this.props.selected.player}</h1>
-            </>
+            <SelectStyleCard>
+            <h2>{this.props.selected.name}</h2>
+            </SelectStyleCard>
         )
     }
 }
