@@ -1,13 +1,47 @@
 import React from "react";
 
-const PlayerCard = props => {
-    return(
-        <div>
-            <h3>{props.playerData.name}</h3>
-            <h5>{props.playerData.country}</h5>
-            <h5>{props.playerData.searches}</h5>
-        </div>
-    )
+class PlayerCard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      addPlayer: ""
+    };
+  }
+
+  hoverHandler = () => {
+    this.setState({addPlayer:this.props.playerData.name});
+  }
+
+  handleAddPlayer = () => {
+    this.props.addHandler(this.state.addPlayer);
+    console.log(this.state)
+  };
+
+  render() {
+    return (
+      <div
+        onMouseOver = {this.hoverHandler}
+        onClick={this.handleAddPlayer}>
+        <h3>{this.props.playerData.name}</h3>
+        <h5>{this.props.playerData.country}</h5>
+        <h5>Searched: {this.props.playerData.searches}</h5>
+      </div>
+    );
+  }
 }
+
+// const PlayerCard = props => {
+//     const clickHandle = () => {
+
+//     }
+
+//     return(
+//         <div>
+//             <h3>{props.playerData.name}</h3>
+//             <h5>{props.playerData.country}</h5>
+//             <h5>{props.playerData.searches}</h5>
+//         </div>
+//     )
+// }
 
 export default PlayerCard;

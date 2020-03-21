@@ -7,7 +7,9 @@ const PlayerCardContainer = props => {
   return (
     <PlayerContainer>
       {playerData.map(player => 
-        <PlayerCard playerData={player} />
+        <PlayerCard 
+            playerData={player}
+            addHandler={props.addHandler} />
       )}
     </PlayerContainer>
   );

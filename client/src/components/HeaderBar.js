@@ -1,10 +1,11 @@
 import React from "react";
+import { Header } from "./Styles";
 
 const HeaderBar = props => {
 return (
-    <div>
-        <h1> Player Data </h1>
-    </div>
+    <Header>
+        <h1> SportsBall Players </h1>
+    </Header>
     );
 };
 export default HeaderBar;
